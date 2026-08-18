@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thẩm định Dự án & Đánh đổi Mục tiêu | Case Study: Nhà ga T2 Nội Bài</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="app-sidebar" id="appSidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-plane-departure"></i>
+      </div>
+      <div class="brand-text">
+        <h2>T2 NỘI BÀI</h2>
+        <span>Thẩm định & Đánh đổi Mục tiêu</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Phân hệ Chính</div>
+      <a href="#section-hero" class="nav-link active">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span>Tổng quan Điều hành</span>
+      </a>
+      <a href="#section-projects" class="nav-link">
+        <i class="fa-solid fa-table-cells-large"></i>
+        <span>Khảo sát 8 Dự án</span>
+      </a>
+      <a href="#section-why-invest" class="nav-link">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Tại sao phải đầu tư?</span>
+      </a>
+      <a href="#section-simulator" class="nav-link">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Bộ Mô phỏng Đánh đổi</span>
+      </a>
+      <a href="#section-outcomes-risks" class="nav-link">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Chi phí ẩn & Rủi ro</span>
+      </a>
+      <a href="#section-lessons-quiz" class="nav-link">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Bài học & Trắc nghiệm</span>
+      </a>
+
+      <div class="nav-section-title">Chế độ Thuyết trình</div>
+      <a href="javascript:void(0)" onclick="openSlideDeck(0)" class="nav-link" style="color: var(--primary-400);">
+        <i class="fa-solid fa-desktop"></i>
+        <span>Bật Slide Deck (18 Slides)</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="mode-card">
+        <div class="mode-info">
+          <h4>Chuyên đề Học phần</h4>
+          <p>Quản lý & Thẩm định Dự án</p>
+        </div>
+        <button class="btn-icon" id="themeToggleBtn" onclick="toggleTheme()" title="Đổi giao diện Sáng/Tối">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN APP AREA -->
+  <main class="app-main">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <button class="mobile-toggle-btn btn-icon" id="mobileToggleBtn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="header-breadcrumb">
+          <span>Báo cáo Chuyên sâu</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <span class="current">Mô hình Đánh đổi Mục tiêu C1</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="btn btn-outline" onclick="window.print()" title="In hoặc Xuất PDF">
+          <i class="fa-solid fa-print"></i>
+          <span>In Báo cáo</span>
+        </button>
+        <button class="btn btn-primary" onclick="openSlideDeck(0)">
+          <i class="fa-solid fa-play"></i>
+          <span>Trình chiếu Slide (F5)</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT CONTAINER -->
+    <div class="content-container">
+
+      <!-- SECTION 1: HERO & EXECUTIVE SUMMARY -->
+      <section id="section-hero" class="section-block">
+        <div class="hero-grid">
+          <!-- Left Hero Card -->
+          <div class="hero-main-card">
+            <div>
+              <div class="hero-badge">
+                <i class="fa-solid fa-award"></i>
+                <span>CASE STUDY MẪU MỰC: KỊCH BẢN C1</span>
+              </div>
+              <h1>Phân tích Đánh đổi Mục tiêu (Goal Trade-offs)</h1>
+              <p>
+                Nghiên cứu điển hình tại <strong>Dự án Mở rộng Nhà ga Hành khách T2 – Cảng HKQT Nội Bài</strong>. 
+                Giải bài toán tam giác mục tiêu kinh điển: Rút ngắn thời gian thi công trước 02 tháng, bảo toàn 100% quy mô và kiểm soát chặt chẽ trần ngân sách 4.996 tỷ đồng bằng phương thức <strong>"3 ca 4 kíp" 24/7</strong>.
+              </p>
+            </div>
+            <div class="hero-cta-group">
+              <button class="btn btn-primary" onclick="openSlideDeck(0)">
+                <i class="fa-solid fa-expand"></i> Bật Chế độ Thuyết trình Toàn màn hình
+              </button>
+              <a href="#section-simulator" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25);">
+                <i class="fa-solid fa-sliders"></i> Trải nghiệm Bộ Mô phỏng
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Visual Hero Card -->
+          <div class="hero-visual-card">
+            <img src="assets/noibai_t2_aerial.jpg" alt="Noi Bai Airport T2 Terminal Aerial">
+            <div class="hero-img-overlay">
+              <h4>Cảng Hàng không Quốc tế Nội Bài</h4>
+              <p>Mở rộng diện tích sàn đạt 200.100 m² – Nâng công suất lên 15 triệu lượt khách/năm</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Metric Counters -->
+        <div class="kpi-grid">
+          <div class="glass-card kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon blue"><i class="fa-solid fa-sack-dollar"></i></div>
+              <span class="kpi-pill neutral">Vốn ACV</span>
+            </div>
+            <div class="kpi-value">4.996 TỶ</div>
+            <div class="kpi-label">Tổng Mức Đầu tư</div>
+            <div class="kpi-sub">Gói thầu chính: 4.600 Tỷ VNĐ</div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon cyan"><i class="fa-solid fa-ruler-combined"></i></div>
+              <span class="kpi-pill positive">+50.000 m²</span>
+            </div>
+            <div class="kpi-value">200.100 M²</div>
+            <div class="kpi-label">Diện tích Sàn Sau Mở rộng</div>
+            <div class="kpi-sub">Mở rộng 2 cánh đông & tây</div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon emerald"><i class="fa-solid fa-users"></i></div>
+              <span class="kpi-pill positive">+50% Công suất</span>
+            </div>
+            <div class="kpi-value">15 TRIỆU</div>
+            <div class="kpi-label">Công suất Khách / Năm</div>
+            <div class="kpi-sub">Tăng từ 10M lên 15M khách/năm</div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon amber"><i class="fa-solid fa-bolt"></i></div>
+              <span class="kpi-pill positive">Sớm ~60 ngày</span>
+            </div>
+            <div class="kpi-value">19/12/2025</div>
+            <div class="kpi-label">Ngày Về đích Thực tế</div>
+            <div class="kpi-sub">Hợp đồng gốc: Tháng 02/2026 (660 ngày)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 8 PROJECTS IN TRADE-OFF SCENARIOS -->
+      <section id="section-projects" class="section-block">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> Khảo sát Thực tiễn</div>
+          <h2 class="section-title">Khảo sát 8 Dự án theo 8 Kịch bản Đánh đổi Mục tiêu</h2>
+          <p class="section-desc">
+            Hệ thống hóa 8 dự án tiêu biểu tại Việt Nam tương ứng với 8 tổ hợp Thời gian (Time) - Chi phí (Cost) - Chất lượng/Phạm vi (Scope). 
+            Nhấp vào bất kỳ dự án nào để xem phân tích chi tiết nguyên nhân thành công hoặc sự cố.
+          </p>
+        </div>
+
+        <!-- Filter and Search -->
+        <div class="filter-bar">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-filter="all" onclick="filterProjects('all', this)">Tất cả (8 Dự án)</button>
+            <button class="filter-btn" data-filter="groupA" onclick="filterProjects('groupA', this)">Nhóm A (1 Cố định)</button>
+            <button class="filter-btn" data-filter="groupB" onclick="filterProjects('groupB', this)">Nhóm B (2 Cố định)</button>
+            <button class="filter-btn" data-filter="groupC" onclick="filterProjects('groupC', this)">Nhóm C (3 Cố định/Biến động)</button>
+          </div>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="projectSearchInput" placeholder="Tìm kiếm tên dự án, mã KB..." oninput="handleProjectSearch(this.value)">
+          </div>
+        </div>
+
+        <!-- Table View -->
+        <div class="projects-table-wrapper">
+          <table class="projects-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Mã</th>
+                <th>Tên Dự án & Kịch bản</th>
+                <th style="width: 170px;">Đánh giá Kết quả</th>
+                <th style="width: 220px;">Kế hoạch Ban đầu</th>
+                <th style="width: 240px;">Kết quả Thực tế</th>
+                <th style="width: 60px;"></th>
+              </tr>
+            </thead>
+            <tbody id="projectsTableBody">
+              <!-- Dynamically rendered via app.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Radar Comparison Chart & Key Insights -->
+        <div class="projects-analytics-grid">
+          <div class="glass-card">
+            <div class="chart-card-header">
+              <h3><i class="fa-solid fa-chart-pie" style="color: var(--primary-400); margin-right: 0.5rem;"></i> So sánh 4 Chiều Mục tiêu (Radar Chart)</h3>
+            </div>
+            <div style="height: 320px; position: relative;">
+              <canvas id="chartProjectsRadar"></canvas>
+            </div>
+          </div>
+
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="chart-card-header">
+                <h3><i class="fa-solid fa-lightbulb" style="color: var(--accent-amber); margin-right: 0.5rem;"></i> Đúc kết từ 8 Dự án Thực tế</h3>
+              </div>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.92rem; color: var(--text-secondary);">
+                <li>• <strong>Nhóm Thành công (C1, B2, B3):</strong> Bảo toàn được mục tiêu công năng cốt lõi nhờ kiểm soát chặt kỷ luật thực thi và cam kết ngân sách/tiến độ.</li>
+                <li>• <strong>Yếu tố GPMB & Trượt giá:</strong> Là hai biến số ngoại sinh lớn nhất khiến các dự án hạ tầng giao thông (A3, B3, C2) bị kéo dài thời gian và đội vốn.</li>
+                <li>• <strong>Chất lượng không thể thay đổi tùy tiện:</strong> Khi bị ép ngân sách, nếu thiếu cơ chế kiểm tra sẽ dẫn đến việc nhà thầu làm bớt xén, đập bỏ công trình (A2).</li>
+                <li>• <strong>Vị thế Case Study T2 (C1):</strong> Là minh chứng đỉnh cao cho việc đạt mục tiêu kép hoàn thành sớm mà không đội vốn bằng phương thức quản trị hiện đại.</li>
+              </ul>
+            </div>
+            <button class="btn btn-primary" onclick="openProjectModal('C1')" style="margin-top: 1rem; width: fit-content;">
+              <i class="fa-solid fa-circle-info"></i> Xem Chi tiết Hồ sơ Case Study T2 (C1)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: WHY INVEST & BOTTLENECK ANALYSIS -->
+      <section id="section-why-invest" class="section-block">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-triangle-exclamation"></i> Phân tích Cung - Cầu</div>
+          <h2 class="section-title">Tại sao phải Đầu tư Mở rộng Nhà ga T2?</h2>
+          <p class="section-desc">
+            Khoảng cách giữa năng lực thiết kế ban đầu và sản lượng hành khách thực tế ngày càng gia tăng, tạo áp lực quá tải dây chuyền lên toàn bộ các khâu dịch vụ sân bay.
+          </p>
+        </div>
+
+        <div class="analytics-two-col">
+          <!-- Traffic vs Capacity Line Chart -->
+          <div class="glass-card">
+            <div class="chart-card-header">
+              <h3>Tăng trưởng Lượng khách vs Công suất Thiết kế (2015 – 2028)</h3>
+              <span class="badge-status danger">Quá tải >130%</span>
+            </div>
+            <div style="height: 320px; position: relative;">
+              <canvas id="chartTrafficCapacity"></canvas>
+            </div>
+          </div>
+
+          <!-- Bottleneck Stress Breakdown -->
+          <div class="glass-card">
+            <div class="chart-card-header">
+              <h3>Áp lực Điểm nghẽn theo Phân khu Sân bay</h3>
+            </div>
+            <div style="height: 320px; position: relative;">
+              <canvas id="chartAirportStress"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Bottleneck Zone Cards -->
+        <div class="stress-grid">
+          <div class="stress-card">
+            <div class="stress-header">
+              <h4>Khu vực Check-in</h4>
+              <span class="badge-status danger">92% Stress</span>
+            </div>
+            <div class="stress-progress-bar"><div class="stress-progress-fill high"></div></div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Ùn ứ hàng dài trong khung giờ cao điểm sáng và đêm muộn.</p>
+          </div>
+
+          <div class="stress-card">
+            <div class="stress-header">
+              <h4>Soi chiếu An ninh</h4>
+              <span class="badge-status warning">85% Stress</span>
+            </div>
+            <div class="stress-progress-bar"><div class="stress-progress-fill med"></div></div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Tốc độ thông quan chậm có nguy cơ làm trễ giờ lên tàu bay.</p>
+          </div>
+
+          <div class="stress-card">
+            <div class="stress-header">
+              <h4>Xuất nhập cảnh</h4>
+              <span class="badge-status warning">88% Stress</span>
+            </div>
+            <div class="stress-progress-bar"><div class="stress-progress-fill customs"></div></div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Áp lực phân luồng hành khách quốc tế và thủ tục hải quan.</p>
+          </div>
+
+          <div class="stress-card">
+            <div class="stress-header">
+              <h4>Băng chuyền Hành lý</h4>
+              <span class="badge-status danger">95% Stress</span>
+            </div>
+            <div class="stress-progress-bar"><div class="stress-progress-fill baggage"></div></div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Thời gian chờ lấy hành lý kéo dài, nghẽn dòng khách đến.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: INTERACTIVE TRADE-OFF SIMULATOR -->
+      <section id="section-simulator" class="section-block">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-calculator"></i> Công cụ Mô phỏng Tương tác</div>
+          <h2 class="section-title">Bộ Mô phỏng Tam giác Đánh đổi Mục tiêu (Trade-off Simulator)</h2>
+          <p class="section-desc">
+            Kéo các thanh trượt Thời gian, Chi phí và Phạm vi để xem thuật toán tự động tính toán mức độ dồn ép Nguồn lực, Cường độ thi công (3 ca 4 kíp) và Điểm rủi ro dự án theo thời gian thực.
+          </p>
+        </div>
+
+        <div class="simulator-container">
+          <!-- Controls Column -->
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--primary-500);">
+              <i class="fa-solid fa-sliders"></i> Điều chỉnh 3 Biến số Mục tiêu
+            </h3>
+
+            <!-- Slider 1: Time -->
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="slider-title"><i class="fa-regular fa-clock" style="color: var(--primary-400);"></i> Thời gian (Tiến độ thực hiện)</span>
+                <span class="slider-val-badge" id="simTimeVal">-20%</span>
+              </div>
+              <input type="range" class="range-input" id="simTimeSlider" min="-30" max="50" step="5" value="-20">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+                <span>-30% (Rút ngắn thần tốc)</span>
+                <span>0% (Đúng hạn)</span>
+                <span>+50% (Kéo dài)</span>
+              </div>
+            </div>
+
+            <!-- Slider 2: Cost -->
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="slider-title"><i class="fa-solid fa-dollar-sign" style="color: var(--accent-emerald);"></i> Chi phí (Ngân sách đầu tư)</span>
+                <span class="slider-val-badge" id="simCostVal">0%</span>
+              </div>
+              <input type="range" class="range-input" id="simCostSlider" min="0" max="40" step="5" value="0">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+                <span>0% (Khóa trần vốn)</span>
+                <span>+20% (Bù thêm chi phí)</span>
+                <span>+40% (Đội vốn lớn)</span>
+              </div>
+            </div>
+
+            <!-- Slider 3: Scope -->
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="slider-title"><i class="fa-solid fa-layer-group" style="color: var(--accent-purple);"></i> Phạm vi & Tiêu chuẩn Chất lượng</span>
+                <span class="slider-val-badge" id="simScopeVal">100%</span>
+              </div>
+              <input type="range" class="range-input" id="simScopeSlider" min="50" max="100" step="5" value="100">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+                <span>50% (Cắt giảm tính năng)</span>
+                <span>80% (Giảm quy mô)</span>
+                <span>100% (Bảo toàn trọn vẹn)</span>
+              </div>
+            </div>
+
+            <!-- Presets -->
+            <div style="margin-top: 1.5rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Mẫu Kịch bản Điển hình:</span>
+              <div class="preset-row">
+                <button class="preset-btn" onclick="setSimPreset(-20, 0, 100)">⭐ T2 Nội Bài (C1)</button>
+                <button class="preset-btn" onclick="setSimPreset(-15, 20, 100)">⚡ SEA Games 31 (B2)</button>
+                <button class="preset-btn" onclick="setSimPreset(25, 30, 100)">⚠️ Cầu Vĩnh Tuy (A3)</button>
+                <button class="preset-btn" onclick="setSimPreset(40, 40, 60)">🚨 Cát Linh - Hà Đông (C2)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Dashboard Column -->
+          <div class="sim-output-box">
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem;">Kết quả Phản hồi của Hệ thống</h3>
+              <div class="sim-metric-row">
+                <div class="sim-metric-card">
+                  <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Cường độ Thi công (3 Ca)</span>
+                  <div class="sim-metric-val" id="simShiftVal" style="color: var(--accent-rose);">95%</div>
+                </div>
+                <div class="sim-metric-card">
+                  <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Nhu cầu Nguồn lực & Thiết bị</span>
+                  <div class="sim-metric-val" id="simResourceVal" style="color: var(--primary-500);">92%</div>
+                </div>
+              </div>
+
+              <div class="sim-metric-card" style="margin-bottom: 1.25rem;">
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Chỉ số Rủi ro Quản lý Dự án (Risk Index)</span>
+                <div class="sim-metric-val" id="simRiskVal" style="color: var(--accent-amber);">58/100</div>
+              </div>
+            </div>
+
+            <div class="sim-verdict-box">
+              <h4 id="simVerdictTitle">⭐ Trùng khớp Kịch bản C1 (T2 Nội Bài)</h4>
+              <p id="simVerdictDesc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                Chiến lược ép tiến độ đỉnh cao: Giữ nguyên ngân sách và quy mô bằng cách huy động 3 ca 4 kíp 24/7. Đòi hỏi năng lực điều phối cực kỳ xuất sắc.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: OUTCOMES, HIDDEN COSTS & RISK HEATMAP -->
+      <section id="section-outcomes-risks" class="section-block">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-shield-halved"></i> Phân tích Sau Đánh đổi</div>
+          <h2 class="section-title">Kết quả Đạt được, Chi phí Ẩn & Ma trận Rủi ro</h2>
+          <p class="section-desc">
+            Đánh đổi thời gian đòi hỏi sự đánh đổi tương xứng về chi phí phi tài chính (áp lực quản lý, căng thẳng nhân sự) và các biện pháp kiểm soát rủi ro nghiêm ngặt.
+          </p>
+        </div>
+
+        <div class="analytics-two-col">
+          <!-- Timeline Gantt Bar Chart -->
+          <div class="glass-card">
+            <div class="chart-card-header">
+              <h3>So sánh Tiến độ: Kế hoạch vs Thực tế</h3>
+              <span class="badge-status success">Về đích sớm 2 tháng</span>
+            </div>
+            <div style="height: 250px; position: relative;">
+              <canvas id="chartTimelineGantt"></canvas>
+            </div>
+          </div>
+
+          <!-- Budget Allocation Donut -->
+          <div class="glass-card">
+            <div class="chart-card-header">
+              <h3>Cơ cấu Phân bổ Vốn Dự án (4.996 Tỷ VNĐ)</h3>
+              <span class="badge-status info">100% Vốn ACV</span>
+            </div>
+            <div style="height: 250px; position: relative;">
+              <canvas id="chartBudgetAllocation"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Risk Grid -->
+        <h3 style="font-size: 1.2rem; margin: 1.75rem 0 1rem;">4 Nhóm Rủi ro Tiềm ẩn & Giải pháp Kiểm soát</h3>
+        <div class="risk-grid">
+          <div class="risk-card-item">
+            <h4>Rủi ro Kỹ thuật & Chất lượng <span class="badge-status danger">Đã kiểm soát</span></h4>
+            <p>Ép tiến độ dễ gây sai sót bê tông hoặc kết cấu nếu thiếu giám sát; dự án duy trì quy trình kiểm tra 3 cấp độc lập 24/7.</p>
+          </div>
+
+          <div class="risk-card-item amber">
+            <h4>Rủi ro Chi phí Phát sinh Phụ trội <span class="badge-status warning">Đã kiểm soát</span></h4>
+            <p>Chi phí nhân công ca đêm và vận chuyển hỏa tốc được bù đắp bằng việc rút ngắn 2 tháng chi phí quản lý dự án kéo dài.</p>
+          </div>
+
+          <div class="risk-card-item blue">
+            <h4>Rủi ro An toàn Bay & An ninh <span class="badge-status info">Tuyệt đối an toàn</span></h4>
+            <p>Thi công sát sườn đường lăn và sân đỗ; thiết lập hàng rào cách ly bụi/FOD và phối hợp chặt chẽ với Cảng vụ hàng không.</p>
+          </div>
+
+          <div class="risk-card-item emerald">
+            <h4>Rủi ro Xung đột Vận hành Khách <span class="badge-status success">Vận hành thông suốt</span></h4>
+            <p>Phân luồng hành khách linh hoạt theo từng giai đoạn thi công, không để xảy ra sự cố gián đoạn các chuyến bay quốc tế.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: LESSONS LEARNED & QUIZ -->
+      <section id="section-lessons-quiz" class="section-block">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Đúc kết & Đánh giá</div>
+          <h2 class="section-title">Bài học Kinh nghiệm & Trắc nghiệm Thẩm định</h2>
+          <p class="section-desc">
+            4 bài học cốt lõi rút ra từ case study T2 Nội Bài cùng bài kiểm tra tương tác 4 câu hỏi giúp củng cố kiến thức quản trị dự án đầu tư.
+          </p>
+        </div>
+
+        <div class="lessons-grid">
+          <div class="lesson-card">
+            <div class="lesson-num">01</div>
+            <div class="lesson-content">
+              <h4>Xác định Mục tiêu Tiên quyết số 1</h4>
+              <p>Không thể tối ưu hóa tuyệt đối mọi mục tiêu cùng lúc; phải xác định rõ mục tiêu cốt lõi (ở T2 là Tiến độ) để định hình toàn bộ chiến lược thực thi.</p>
+            </div>
+          </div>
+
+          <div class="lesson-card">
+            <div class="lesson-num">02</div>
+            <div class="lesson-content">
+              <h4>Đổi mới Phương thức Tổ chức Thi công</h4>
+              <p>Đánh đổi không nhất thiết phải là cắt giảm quy mô hay chi thêm tiền; có thể giải bài toán bằng cách tổ chức 3 ca 4 kíp và ứng dụng công nghệ.</p>
+            </div>
+          </div>
+
+          <div class="lesson-card">
+            <div class="lesson-num">03</div>
+            <div class="lesson-content">
+              <h4>Tốc độ phải Đi liền Kiểm soát Rủi ro</h4>
+              <p>Tiến độ càng nhanh thì hệ sinh thái giám sát an toàn, kiểm soát chất lượng và chăm lo phúc lợi người lao động càng phải được siết chặt.</p>
+            </div>
+          </div>
+
+          <div class="lesson-card">
+            <div class="lesson-num">04</div>
+            <div class="lesson-content">
+              <h4>Nghệ thuật Quản trị trên Công trình 'Sống'</h4>
+              <p>Kinh nghiệm quý báu trong điều phối nhịp nhàng giữa hoạt động xây lắp thần tốc và duy trì khai thác sân bay an toàn 100%.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Quiz Container -->
+        <div class="quiz-card">
+          <div class="quiz-header">
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--primary-500);"><i class="fa-solid fa-circle-question"></i> Mini-Quiz: Kiểm tra Nhanh Kiến thức Thẩm định</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Chọn đáp án chính xác nhất để xem giải thích chuyên sâu</p>
+            </div>
+            <span class="badge-status info" id="quizCounter">Câu 1 / 4</span>
+          </div>
+
+          <h4 id="quizQuestionTitle" style="font-size: 1.05rem; margin-bottom: 1rem;">Đang tải câu hỏi...</h4>
+          <div class="quiz-options" id="quizOptionsContainer">
+            <!-- Options dynamically loaded -->
+          </div>
+          <div class="quiz-explanation" id="quizExplanation"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ==============================================================================
+     MODAL: PROJECT DETAILS DRAWER
+     ============================================================================== -->
+<div class="project-modal" id="projectDetailModal" onclick="if(event.target===this) closeProjectModal()">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modalProjectTitle" style="font-size: 1.15rem;">Chi tiết Dự án</h3>
+      <button class="btn-icon" onclick="closeProjectModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="modalProjectBody">
+      <!-- Body populated via app.js -->
+    </div>
+  </div>
+</div>
+
+<!-- ==============================================================================
+     MODAL: PRESENTATION SLIDE DECK (18 SLIDES)
+     ============================================================================== -->
+<div class="slide-deck-modal" id="slideDeckModal">
+  <div class="slide-deck-header">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span style="font-weight: 800; font-family: var(--font-heading); color: var(--accent-cyan); font-size: 1.1rem;">
+        <i class="fa-solid fa-plane-departure"></i> T2 NỘI BÀI
+      </span>
+      <span style="color: rgba(255,255,255,0.4);">|</span>
+      <span style="font-size: 0.88rem; color: #CBD5E1;">Thẩm định Dự án Đầu tư & Đánh đổi Mục tiêu</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span class="slide-counter" id="slideCounterDisplay">01 / 18</span>
+      <button class="btn-icon" style="background: rgba(255,255,255,0.1); color: white;" onclick="toggleFullscreen()" title="Toàn màn hình (F)">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+      <button class="btn-icon" style="background: rgba(255,255,255,0.1); color: white;" onclick="closeSlideDeck()" title="Đóng Slide (Esc)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="slide-stage-container">
+    <div class="slide-canvas">
+      <div>
+        <div class="slide-kicker" id="slideKicker">KICKER</div>
+        <h2 id="slideTitle">Slide Title</h2>
+        <p id="slideSubtitle" style="color: #94A3B8; font-size: 1rem; margin-bottom: 1.25rem;">Slide Subtitle</p>
+      </div>
+
+      <div class="slide-body-content" id="slideBody">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.75rem; font-size: 0.8rem; color: #64748B;">
+        <span>Case Study: Mở rộng Nhà ga T2 Nội Bài – Mô hình Đánh đổi Mục tiêu C1</span>
+        <span>Sử dụng phím ◄ / ► hoặc Phím cách để chuyển slide</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-deck-footer">
+    <button class="slide-ctrl-btn" onclick="prevSlide()" title="Slide trước (◄)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slide-ctrl-btn" onclick="nextSlide()" title="Slide kế tiếp (►)"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="btn btn-outline" onclick="closeSlideDeck()" style="color: white; border-color: rgba(255,255,255,0.25); background: transparent;">
+      <i class="fa-solid fa-house"></i> Dashboard
+    </button>
+  </div>
+</div>
+
+<!-- Custom Scripts -->
+<script src="app.js"></script>
+
+</body>
+</html>
